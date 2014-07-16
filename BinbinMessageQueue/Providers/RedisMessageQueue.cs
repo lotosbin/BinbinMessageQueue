@@ -5,7 +5,7 @@ using ServiceStack.Text;
 
 namespace BinbinMessageQueue.Providers
 {
-    public class RedisMessageBus : IMessageBus
+    public class RedisMessageQueue : IMessageBus
     {
         #region Core
 

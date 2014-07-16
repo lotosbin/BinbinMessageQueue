@@ -65,9 +65,11 @@
   <ItemGroup>
     <Compile Include="IMessageBus.cs" />
     <Compile Include="Providers\MongoMessage.cs" />
-    <Compile Include="Providers\RedisMessageBus.cs" />
+    <Compile Include="Providers\MongoMessageQueue.cs" />
+    <Compile Include="Providers\%28obsoleted%29\RedisMessageBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\MongoMessageBus.cs" />
+    <Compile Include="Providers\%28obsoleted%29\MongoMessageBus.cs" />
+    <Compile Include="Providers\RedisMessageQueue.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

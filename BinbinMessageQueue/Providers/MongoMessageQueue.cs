@@ -6,7 +6,7 @@ using ServiceStack.Text;
 
 namespace BinbinMessageQueue.Providers
 {
-    public class MongoMessageBus : IMessageBus
+    public class MongoMessageQueue : IMessageBus
     {
         public void PublishMessage(string channel, string message)
         {
