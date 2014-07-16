@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{08D285BF-1A1F-42AF-853D-72E2FD2DFC65}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinMessageQueue", "BinbinMessageQueue\BinbinMessageQueue.csproj", "{733FC2F6-C649-4299-A0AB-05F3DA507221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinMessageQueueTest", "BinbinMessageQueueTest\BinbinMessageQueueTest.csproj", "{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinbinMessageQueueHanlders", "BinbinMessageQueueHandlers\BinbinMessageQueueHanlders.csproj", "{128D36D0-1B8A-4905-807E-9877DFB1BF09}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBus", "MessageBus", "{31599F10-5BDF-4FA5-B3D4-E5E20F4642ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{528A17E1-BD00-4EB9-A9E5-395E0616AACA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Caidan-Debug|Any CPU = Caidan-Debug|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Caidan-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Caidan-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{733FC2F6-C649-4299-A0AB-05F3DA507221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Caidan-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Caidan-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Caidan-Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Caidan-Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{733FC2F6-C649-4299-A0AB-05F3DA507221} = {31599F10-5BDF-4FA5-B3D4-E5E20F4642ED}
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB} = {31599F10-5BDF-4FA5-B3D4-E5E20F4642ED}
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09} = {31599F10-5BDF-4FA5-B3D4-E5E20F4642ED}
+	EndGlobalSection
+EndGlobal
