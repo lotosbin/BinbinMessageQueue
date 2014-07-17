@@ -5,7 +5,7 @@ using ServiceStack.Text;
 
 namespace BinbinMessageQueue.Providers
 {
-    public class RedisMessageQueue : IMessageBus
+    public class RedisMessageQueue : IMessageQueue
     {
         #region Core
 
@@ -31,14 +31,29 @@ namespace BinbinMessageQueue.Providers
 
         #endregion
         #region strong type
-        public void PublishMessage<TModel>(string channel, TModel message)
+        public void PublishMessage<TModel>(string channel, TModel model)
         {
-            PublishMessage(channel, message.SerializeToString());
+            PublishMessage(channel, model.SerializeToString());
+        }
+
+        public string GetTypeId(Type modelType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetTypeId<TModel>()
+        {
+            throw new NotImplementedException();
         }
 
         public void Subscription<TModel>(string[] channels, Action<string, TModel> onMessage)
         {
             Subscription(channels, (channel, message) => onMessage(channel, JsonSerializer.DeserializeFromString<TModel>(message)));
+        }
+
+        public void PublishMessage(string channel, string typeId, string message)
+        {
+            throw new NotImplementedException();
         }
 
         public void Subscription(string[] channels, Action<string, string, string> onMessage)
@@ -47,6 +62,11 @@ namespace BinbinMessageQueue.Providers
         }
 
         public TModel DeserializeFromString<TModel>(string message)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string SerialalizeToString<TModel>(TModel model)
         {
             throw new NotImplementedException();
         }

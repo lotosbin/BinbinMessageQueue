@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMessageBus.cs" />
+    <Compile Include="IMessageQueue.cs" />
     <Compile Include="Providers\MongoMessage.cs" />
     <Compile Include="Providers\MongoMessageQueue.cs" />
     <Compile Include="Providers\%28obsoleted%29\RedisMessageBus.cs" />

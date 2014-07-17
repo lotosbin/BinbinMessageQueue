@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using BinbinMessageQueue;
 using BinbinMessageQueue.Providers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -12,8 +13,10 @@ namespace BinbinMessageQueueTest
         [TestMethod]
         public void TestMongoMessageQueue()
         {
-            new MongoMessageQueue().PublishMessage("test", "test message");
+            IMessageQueue queue = new MongoMessageQueue();
+            queue.PublishMessage("test", "", "test message");
         }
+
         [ExpectedException(typeof(Exception))]
         [TestMethod]
         public void TestMongoMessageQueueStrongType_NoGuidAttribute_ShouldException()
