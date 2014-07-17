@@ -40,6 +40,17 @@ namespace BinbinMessageQueue.Providers
         {
             Subscription(channels, (channel, message) => onMessage(channel, JsonSerializer.DeserializeFromString<TModel>(message)));
         }
+
+        public void Subscription(string[] channels, Action<string, string, string> onMessage)
+        {
+            throw new NotImplementedException();
+        }
+
+        public TModel DeserializeFromString<TModel>(string message)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
