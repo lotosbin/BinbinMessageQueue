@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Configuration;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using MongoRepository;
 using ServiceStack;
 using ServiceStack.Text;
@@ -44,17 +46,33 @@ namespace BinbinMessageQueue.Providers
 
         public void Subscription(string[] channels, Action<string, string, string> onMessage)
         {
-            var repository = CreateRepository();
             while (true)
             {
-                foreach (var channel in channels)
+                SubscriptionOnce(channels, onMessage);
+                Thread.Sleep(GetSleepTimeOut());
+            }
+        }
+
+        private static int GetSleepTimeOut()
+        {
+            var setting = ConfigurationManager.AppSettings["BinbinMessageQueue_SleepTimeOut"];
+            if (!string.IsNullOrEmpty(setting))
+            {
+                return int.Parse(setting);
+            }
+            return 500;
+        }
+
+        private void SubscriptionOnce(string[] channels, Action<string, string, string> onMessage)
+        {
+            foreach (var channel in channels)
+            {
+                var repository = CreateRepository();
+                var message = repository.Where(m => m.Channel == channel).OrderBy(m => m.Id).FirstOrDefault();
+                if (message != null)
                 {
-                    var message = repository.Where(m => m.Channel == channel).OrderBy(m => m.Id).FirstOrDefault();
-                    if (message != null)
-                    {
-                        onMessage(channel, message.TypeId, message.Message);
-                        repository.Delete(message);
-                    }
+                    onMessage(channel, message.TypeId, message.Message);
+                    repository.Delete(message);
                 }
             }
         }
