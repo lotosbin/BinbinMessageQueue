@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{08D285BF-1A1F-42AF-853D-72E2FD2DFC65}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SmapleAndTest", "SmapleAndTest", "{61A5DCB4-1441-4924-9C35-C5ADCBD1A5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,5 +51,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{17C374CC-111A-4FB0-A34D-B6675AB3B2DB} = {61A5DCB4-1441-4924-9C35-C5ADCBD1A5D6}
+		{128D36D0-1B8A-4905-807E-9877DFB1BF09} = {61A5DCB4-1441-4924-9C35-C5ADCBD1A5D6}
 	EndGlobalSection
 EndGlobal

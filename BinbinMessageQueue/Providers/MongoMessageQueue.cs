@@ -48,8 +48,11 @@ namespace BinbinMessageQueue.Providers
         {
             while (true)
             {
-                SubscriptionOnce(channels, onMessage);
-                Thread.Sleep(GetSleepTimeOut());
+                var allChannelIsEmpty = SubscriptionOnce(channels, onMessage);
+                if (allChannelIsEmpty)
+                {
+                    Thread.Sleep(GetSleepTimeOut());
+                }
             }
         }
 
@@ -63,18 +66,21 @@ namespace BinbinMessageQueue.Providers
             return 500;
         }
 
-        private void SubscriptionOnce(string[] channels, Action<string, string, string> onMessage)
+        private bool SubscriptionOnce(string[] channels, Action<string, string, string> onMessage)
         {
+            var allChannelEmpty = true;
             foreach (var channel in channels)
             {
                 var repository = CreateRepository();
                 var message = repository.Where(m => m.Channel == channel).OrderBy(m => m.Id).FirstOrDefault();
                 if (message != null)
                 {
+                    allChannelEmpty = false;
                     onMessage(channel, message.TypeId, message.Message);
                     repository.Delete(message);
                 }
             }
+            return allChannelEmpty;
         }
 
         #endregion
