@@ -13,7 +13,13 @@ namespace BinbinMessageQueue.Providers
     {
         private static MongoRepository<MongoMessage> CreateRepository()
         {
-            var repository = new MongoRepository<MongoMessage>("mongodb://localhost/messagebus");
+            var connectionString = "mongodb://localhost/messagebus";
+            var s = ConfigurationManager.ConnectionStrings["MongoMessageQueue"];
+            if (null != s && !string.IsNullOrEmpty(s.ConnectionString))
+            {
+                connectionString = s.ConnectionString;
+            }
+            var repository = new MongoRepository<MongoMessage>(connectionString);
             return repository;
         }
 
